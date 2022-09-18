@@ -36,21 +36,21 @@ All the tasks are noted down here and as each task is completed the check box wo
 
 ### Technical Tasks
 
-- [ ] Connect a motion sensor to the board and read data
-    - [ ] Use the data from motion sensors to illuminate a LED.
-- [ ] Connect all the motion sensors to the board and detect direction.
-- [ ] Connect temperature sensor and read data
-    - [ ] Use the data from the temperature sensor and compare with the provided limit to illuminate a LED.
-- [ ] Controlling PWM signals
-    - [ ] using the PWM signals controlling a LED light intensity
-    - [ ] using the PWM signals controlling the speed of a DC motor
-- [ ] displaying the obtained temperature value on the seven segment dispaly
-- [ ] write the test bench for the code and verify
+- [x] Connect a motion sensor to the board and read data
+    - [x] Use the data from motion sensors to illuminate a LED.
+- [x] Connect all the motion sensors to the board and detect direction.
+- [x] Connect temperature sensor and read data
+    - [x] Use the data from the temperature sensor and compare with the provided limit to illuminate a LED.
+- [x] Controlling PWM signals
+    - [x] using the PWM signals controlling a LED light intensity
+    - [x] using the PWM signals controlling the speed of a DC motor
+- [x] displaying the obtained temperature value on the seven segment dispaly
+- [x] write the test bench for the code and verify
 
 ### Documentation Tasks
 
-- [ ] verify git repo is upto date
-- [ ] creation of report on the project.
+- [x] verify git repo is upto date
+- [x] creation of report on the project.
 
 ## Resources
 

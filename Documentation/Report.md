@@ -22,7 +22,7 @@ These sensors are having two control parameters in addition. One is called the '
 
 The motion sensor used for this project is HC-SR501
 
-![HC-SR501](Documentation/images/DS18B20-Supply.png)
+![HC-SR501](/Documentation/images/DS18B20-Supply.png)
 
 |  | MIN | MAX | USED |
 | ------ | ------ | ------ | ------ |
@@ -44,9 +44,9 @@ The 2-byte alarm registers and the configuration register are nonvolatile (EPROM
 
 The communication between the sensor and the FPGA board is done with the help of certain commands like ConverT(44H), Read Scratchpad (BEH), etc through the one wire bus.
 
-![KY-001](Documentation/images/KY-001.png)
+![KY-001](/Documentation/images/KY-001.png)
 
-![DS18B20-Supply](Documentation/images/DS18B20-Supply.png)
+![DS18B20-Supply](/Documentation/images/DS18B20-Supply.png)
 
 | Name | MIN | MAX | Description |
 | ------ | ------ | ------ | ------ |
@@ -88,19 +88,19 @@ For connecting all the components to the Boolean board, the PmodC from the solde
 
 Each motion sensor data output is passed to T5, R5, T4 PMOD ports and the sensor was driven with on board 5V and GND
 
-![PIR-Circuit](Documentation/images/PIR-Circuit.png)
+![PIR-Circuit](/Documentation/images/PIR-Circuit.png)
 
 ### Temperature Sensor
 
 The temperature sensor's data I/O pin is connected to the T6 PMOD port and the sensor was driven by 3.3V from the board.
 
-![DS18B20-Circuit](Documentation/images/DS18B20-Circuit.png)
+![DS18B20-Circuit](/Documentation/images/DS18B20-Circuit.png)
 
 ### Motor Driver
 
 The pwm signal generated from the board is passed on to the motor driver through the PMOD port R6 and the motor is driven using an external 4.5V power supply.
 
-![PWM-Circuit](Documentation/images/PWM-Circuit.png)
+![PWM-Circuit](/Documentation/images/PWM-Circuit.png)
 
 
 
@@ -116,7 +116,7 @@ Initially a FSM was created to understand the flow of control to detect the dire
 
 A simple FSM is created where the state changes in the sequence of detection and at the last state the light/LED is illuminated.
 
-![PIR-FSM](Documentation/images/PIR-FSM.png)
+![PIR-FSM](/Documentation/images/PIR-FSM.png)
 
 After the FSM being created, the next task is to implement the same in verilog.
 
@@ -130,11 +130,11 @@ Problems Faced
 
 The temperature sensor works on a strict flow, where each command should be passed on to the sensor and read from the sensor in respective time interval. As we are using a single port for both input and output it is required to create a flow so that there would not be any collisions in data passage. For this purpose referring to the flow diagram from the [datasheet](https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf), a required flow diagram was created.
 
-![DS18B20-Flow](Documentation/images/DS18B20-Flow.png)
+![DS18B20-Flow](/Documentation/images/DS18B20-Flow.png)
 
 To implement this flow we require a proper structure for which a state flow diagram was designed, where the control will be passing from each state and within each state the specific task would be implemented within the required time period for the sensor.
 
-![DS18B20-FSM](Documentation/images/DS18B20-FSM.png)
+![DS18B20-FSM](/Documentation/images/DS18B20-FSM.png)
 
 After implementing the FSM the temperature was delivered from the sensor and the next task is to display this value on the on-board seven segment display. The binary output from the sensor read was 72 bits, of which the first 2 bytes were having the read temperature. This 16 bits represents the signed temperature value with deimal points in binary. The least significiant 4 bits comes after the decimal point, which is displayed directly on the display and the rest 12 bits is converted binary into BCD and displyed.
 
@@ -163,11 +163,7 @@ This check can be carried out by taking the LED value from the motion_sensor mod
 
 The developed code was tested before moving into the hardware, by creating a simulation file for the wrapper module.
 
-<simulation results>
-
 After verifying the implementation using simulation, the code was moved into hardware. The final result observed was recorded. 
-
-<vedio>
 
 # Experience
 

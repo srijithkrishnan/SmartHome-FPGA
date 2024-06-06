@@ -22,7 +22,7 @@ These sensors are having two control parameters in addition. One is called the '
 
 The motion sensor used for this project is HC-SR501
 
-![HC-SR501](/Documentation/images/DS18B20-Supply.png)
+![HC-SR501](/Documentation/images/HC-SR501.png)
 
 |  | MIN | MAX | USED |
 | ------ | ------ | ------ | ------ |
